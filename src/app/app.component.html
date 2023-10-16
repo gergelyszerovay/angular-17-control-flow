@@ -1,0 +1,49 @@
+<h3>&#64;if and &#64;else</h3>
+<div>
+  <input #checkbox type="checkbox" [checked]="isChecked()" (change)="isChecked.set(checkbox.checked)"/>
+</div>
+<div>
+  @if (isChecked()) {
+  <span>Checked</span>
+} @else {
+  <span>Not checked</span>
+}
+</div>
+<h3>&#64;for</h3>
+<ul>
+@for (item of items; track item.id; let index = $index, first = $first; let last = $last, even = $even, odd = $odd; let count = $count) {
+<li><strong>{{item.name}}</strong> index={{index}} first={{first}} last={{last}} even={{even}} odd={{odd}} count={{count}}</li>
+}
+</ul>
+<h3>&#64;switch and &#64;case</h3>
+<div>
+  <div>
+    <input type="radio" [checked]="radioValue() === 1" (change)="radioValue.set(1)" id="radio1"/>
+    <label for="radio1">1</label>
+  </div>
+  <div>
+    <input type="radio" [checked]="radioValue() === 2" (change)="radioValue.set(2)" id="radio2"/>
+    <label for="radio2">2</label>
+  </div>
+  <div>
+    <input type="radio" [checked]="radioValue() === 3" (change)="radioValue.set(3)" id="radio3"/>
+    <label for="radio3">3</label>
+  </div>
+  <div>
+    <input type="radio" [checked]="radioValue() === 4" (change)="radioValue.set(4)" id="radio4"/>
+    <label for="radio4">4</label>
+  </div>
+</div>
+<div>
+  @switch (radioValue()) {
+  @case (1) {
+    <span>Case 1</span>
+  }
+  @case (2) {
+    <span>Case 2</span>
+  }
+  @default {
+    <span>Default case (Not 1 or 2)</span>
+  }
+}
+</div>
