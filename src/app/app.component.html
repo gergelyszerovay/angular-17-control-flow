@@ -1,20 +1,17 @@
 <h3>&#64;if and &#64;else</h3>
+}
 <div>
-  <input #checkbox type="checkbox" [checked]="isChecked()" (change)="isChecked.set(checkbox.checked)"/>
+  <input #checkbox type="checkbox" [checked]="isChecked()" (change)="isChecked.set(checkbox.checked)" id="checkbox"/>
 </div>
 <div>
-  @if (isChecked()) {
+@if (isChecked()) {
   <span>Checked</span>
-} @else {
+}
+@else {
   <span>Not checked</span>
 }
 </div>
-<h3>&#64;for</h3>
-<ul>
-@for (item of items; track item.id; let index = $index, first = $first; let last = $last, even = $even, odd = $odd; let count = $count) {
-<li><strong>{{item.name}}</strong> index={{index}} first={{first}} last={{last}} even={{even}} odd={{odd}} count={{count}}</li>
-}
-</ul>
+
 <h3>&#64;switch and &#64;case</h3>
 <div>
   <div>
@@ -47,3 +44,20 @@
   }
 }
 </div>
+
+<h3>&#64;for</h3>
+<ul>
+@for (item of collection; track item.id; let index = $index, first = $first; let last = $last, even = $even, odd = $odd; let count = $count) {
+<li><strong>{{item.name}}</strong> index={{index}} first={{first}} last={{last}} even={{even}} odd={{odd}} count={{count}}</li>
+}
+</ul>
+
+<h3>&#64;empty</h3>
+<ul>
+@for (item of emptyCollection; track item.id;) {
+<li><strong>{{item.name}}</strong></li>
+}
+@empty {
+  <span>The collection is empty</span>
+}
+</ul>

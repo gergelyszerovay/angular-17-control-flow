@@ -1,6 +1,12 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+
+type ItemType = {
+  readonly id: number;
+  readonly name: string;
+};
+
+type CollectionType = ReadonlyArray<ItemType>;
 
 @Component({
   selector: 'app-root',
@@ -11,10 +17,13 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   isChecked = signal(true);
-  items = [
+
+  collection: CollectionType = [
     { id: 1, name: 'Item 1' },
     { id: 2, name: 'Item 2' },
     { id: 3, name: 'Item 3' }
   ];
+  emptyCollection: CollectionType = [];
+
   radioValue = signal(1);
 }

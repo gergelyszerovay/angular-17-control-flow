@@ -1,3 +1,6 @@
+
+This is the application with the examples for my [Angular v17 feature: new control flow syntax](https://www.angularaddicts.com/p/angular-17-new-control-flow-with-signals) article.
+
 # angular-17-control-flow
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.0-next.8.
